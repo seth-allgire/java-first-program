@@ -12,6 +12,10 @@ public class App
     }
 
     public static int doubleTheNumber(int number) {
-        return -1;
+        return (number * 2);
+    }
+
+    private static int add(int numbers) {
+        return (-1);
     }
 }
