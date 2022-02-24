@@ -8,11 +8,13 @@ public class SavingsCalculator {
     private float[] credits;
     private float[] debits;
 
+    //create constructor for SavingsCalculator//
     public SavingsCalculator(float[] credits, float[] debits) {
         this.credits = credits;
         this.debits = debits;
     }
-
+    
+    //create method that returns sum of credits//
     private float sumOfCredits() {
         float sum = 0.0f;
         for (float credit: credits) {
@@ -21,6 +23,7 @@ public class SavingsCalculator {
         return sum;
     }
 
+    //create method that returns sum of debits//
     private float sumOfDebits() {
        float sum = 0.0f;
        for ( float debit: debits) {
@@ -28,7 +31,8 @@ public class SavingsCalculator {
        }
        return sum;
     }
-
+    
+    //method that calculates days remaining in the month//
     private static int remainingDaysInMonth(LocalDate date) {
         YearMonth yearMonth = YearMonth.of(date.getYear(), date.getMonth());
         int totalDaysInMonth = yearMonth.lengthOfMonth();
@@ -36,10 +40,12 @@ public class SavingsCalculator {
         return remainingDays;
     }
 
+    //calculate net savings//
     public float calculate() {
         return sumOfCredits() - sumOfDebits();
     }
 
+    //main() method that does tons of stuff//
     public static void main(String[] args) {
         final String[] creditsAsString = args[0].split(",");
         final String[] debitsAsString = args[1].split(",");
